@@ -13,6 +13,17 @@
 - Added a low-contrast ASCII background inspired by `The Creation of Adam` in `src/index.html`.
 - Updated `src/css/styles.css` to render the ASCII as a fixed decorative background behind the main content without affecting readability.
 
+# [16-03-2026 - 00:07]
+
+- Añadida animación `icon-bounce` en `src/css/styles.css` al hacer hover sobre los íconos sociales: sube, escala y vuelve a su posición en 0.5s.
+
+# [16-03-2026 - 00:08]
+
+- Añadida animación de entrada a la sección de proyectos mediante Intersection Observer en `src/js/main.js`: los elementos revelan al hacer scroll con `data-reveal` + clase `revealed`.
+- Eliminado `will-change` global de `html`, `body` y `.site-shell` — en dispositivos lentos causaba consumo excesivo de memoria sin beneficio.
+- Añadido `@media (prefers-reduced-motion: reduce)` en `src/css/styles.css` para desactivar todas las animaciones/transiciones en dispositivos con esa preferencia.
+- Añadidos estilos `[data-reveal]` con transition delay configurable via CSS custom property.
+
 # [16-03-2026 - 00:06]
 
 - Añadidos logos de X (`https://x.com/meliankor`) y YouTube (`https://www.youtube.com/@meliankor`) con Bootstrap Icons (`bi-twitter-x`, `bi-youtube`).
