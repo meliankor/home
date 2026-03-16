@@ -13,6 +13,12 @@
 - Added a low-contrast ASCII background inspired by `The Creation of Adam` in `src/index.html`.
 - Updated `src/css/styles.css` to render the ASCII as a fixed decorative background behind the main content without affecting readability.
 
+# [16-03-2026 - 00:06]
+
+- Añadidos logos de X (`https://x.com/meliankor`) y YouTube (`https://www.youtube.com/@meliankor`) con Bootstrap Icons (`bi-twitter-x`, `bi-youtube`).
+- Orden final: GitHub → X → YouTube → Discord → Ko-fi.
+- Añadidos retrasos de animación para los íconos 4º y 5º en `src/css/styles.css`.
+
 # [16-03-2026 - 00:00]
 
 - Añadido enlace Ko-fi en `src/index.html` como tercer ícono social, usando SVG inline con `fill="currentColor"` para que adapte su color al tema activo (claro/oscuro).
