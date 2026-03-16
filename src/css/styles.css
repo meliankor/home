@@ -19,7 +19,7 @@
 html.dark {
   --primary: #f4ecd6;
   --primary-foreground: #000000;
-  --background: #000000;
+  --background: #111111;
   --foreground: #f4ecd6;
   --card: #1a1a1a;
   --card-foreground: #f4ecd6;
@@ -183,6 +183,15 @@ button:not(:disabled) {
 
 .social-link:nth-child(2) .social-icon {
   animation-delay: 100ms;
+}
+
+.social-link:nth-child(3) .social-icon {
+  animation-delay: 200ms;
+}
+
+svg.social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .projects-section {
