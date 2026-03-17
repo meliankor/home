@@ -1,41 +1,62 @@
-# [15-03-2026 - 03:19]
+# [17-03-2026 - 23:30]
 
-- Reworked `src/index.html` to a dark, minimal directory-style layout inspired by the `uShare` page while preserving the personal links for GitHub, Discord, and source access.
-- Replaced the previous decorative portfolio styling in `src/css/styles.css` with a monospace, centered, dark presentation aligned with the new aesthetic.
-- Simplified `src/js/main.js` by removing theme-toggle behavior that no longer matches the updated interface and keeping only canonical URL setup.
+- Corregido el centrado de los anuncios: el carrusel ahora usa `style.display = "none"` en lugar del atributo `hidden`, garantizando que solo el anuncio activo ocupa espacio en el layout y `text-align: center` del contenedor funcione correctamente.
 
-# [15-03-2026 - 03:22]
+# [17-03-2026 - 23:00]
 
-- Updated the ASCII title in `src/index.html` to match the latest provided `Melian Kor` text exactly.
+- Carrusel de anuncios: segundo anuncio "He agregado un nuevo proyecto, échale un vistazo." apuntando al repo de Animal Crossing PC Port. Fade de 350ms entre anuncios cada 6s.
+- Botón de idioma con icono `bi-translate` debajo del toggle de tema, guardado en localStorage. Aplica traducciones mediante `data-i18n` sin recargar la página.
+- Nuevo proyecto "Animal Crossing — PC Port" en la sección de proyectos apuntando a https://github.com/meliankor/animal-crossing-pc-port.
+- Todos los textos dinámicos etiquetados con `data-i18n`: badge, textos de anuncios, título "Proyectos", descripciones de ambos proyectos.
 
-# [15-03-2026 - 03:28]
+# [17-03-2026 - 22:30]
 
-- Added a low-contrast ASCII background inspired by `The Creation of Adam` in `src/index.html`.
-- Updated `src/css/styles.css` to render the ASCII as a fixed decorative background behind the main content without affecting readability.
+- Añadido `.announcement-meta` en HTML para agrupar badge + icono juntos, evitando que queden como elementos huérfanos en móvil al hacer wrap.
+- CSS móvil (≤640px): barra con altura automática, texto ocupa su propia fila (`flex: 1 1 100%`), `white-space: normal` para que fluya sin cortes.
+- Restaurado `positionThemeToggle` con `ResizeObserver` para posicionar el toggle dinámicamente debajo de la barra en cualquier altura.
 
-# [16-03-2026 - 00:07]
+# [17-03-2026 - 22:00]
 
-- Añadida animación `icon-bounce` en `src/css/styles.css` al hacer hover sobre los íconos sociales: sube, escala y vuelve a su posición en 0.5s.
+- Rediseño definitivo de la barra de anuncios: se abandona la píldora en el hero.
+- Barra superior con `position: absolute`, centrado vía `text-align: center` + `display: inline-flex` en `.announcement`.
+- Toggle reposicionado a `top: calc(2.75rem + 0.6rem)`, justo debajo de la barra.
+- Delays de animación del hero reescalonados (título: 0.2s, social links: 0.35s, iconos: 350–750ms) para sincronizar con la entrada de la barra.
 
-# [16-03-2026 - 00:08]
+# [17-03-2026 - 21:30]
 
-- Añadida animación de entrada a la sección de proyectos mediante Intersection Observer en `src/js/main.js`: los elementos revelan al hacer scroll con `data-reveal` + clase `revealed`.
-- Eliminado `will-change` global de `html`, `body` y `.site-shell` — en dispositivos lentos causaba consumo excesivo de memoria sin beneficio.
-- Añadido `@media (prefers-reduced-motion: reduce)` en `src/css/styles.css` para desactivar todas las animaciones/transiciones en dispositivos con esa preferencia.
-- Añadidos estilos `[data-reveal]` con transition delay configurable via CSS custom property.
+- Rediseño de la sección de anuncios: se abandona el enfoque de barra superior y se adopta una píldora centrada dentro del hero, antes del título.
+- Eliminados: `.announcement-bar`, `topBarReveal`, `mobileBarReveal`, `positionThemeToggle` y toda la lógica de posicionamiento dinámico.
+- El toggle de tema vuelve a `position: absolute; top: 1.5rem; right: 1.5rem` sin JS.
 
-# [16-03-2026 - 00:06]
+# [17-03-2026 - 21:00]
 
-- Añadidos logos de X (`https://x.com/meliankor`) y YouTube (`https://www.youtube.com/@meliankor`) con Bootstrap Icons (`bi-twitter-x`, `bi-youtube`).
-- Orden final: GitHub → X → YouTube → Discord → Ko-fi.
-- Añadidos retrasos de animación para los íconos 4º y 5º en `src/css/styles.css`.
+- En móvil (≤640px): la barra de anuncios se rediseña como tarjeta flotante en la parte inferior de la pantalla (`position: fixed; bottom: 1.25rem`) con border-radius, borde completo y sombra.
+- Animación móvil independiente (`mobileBarReveal`): entra desde abajo con `animation-delay: 0.6s` para no solapar con el hero.
+- JS: `positionThemeToggle` usa `matchMedia` para aplicar el posicionamiento dinámico solo en escritorio (≥641px).
 
-# [16-03-2026 - 00:00]
+# [17-03-2026 - 20:30]
 
-- Añadido enlace Ko-fi en `src/index.html` como tercer ícono social, usando SVG inline con `fill="currentColor"` para que adapte su color al tema activo (claro/oscuro).
-- Añadidas reglas en `src/css/styles.css` para dimensionar el SVG (`svg.social-icon`) y su retraso de animación (`nth-child(3)`).
+- El toggle de tema se ha separado de la barra de anuncios y vuelve a su propio `theme-toggle-wrap`.
+- La barra de anuncios ahora usa `position: absolute` (no sigue al hacer scroll).
+- El toggle se posiciona dinámicamente via `ResizeObserver` justo debajo de la barra.
+- Texto actualizado: "¿Necesitas un servidor de Discord? No te preocupes, envíame un mensaje para ayudarte."
+- Mejora móvil (≤640px): flecha oculta para liberar espacio, texto a 2 líneas máximo con `-webkit-line-clamp`.
 
-# [15-03-2026 - 19:00]
+# [17-03-2026 - 20:00]
 
-- Removed the decorative ASCII background from `src/index.html` so the `home` project aligns more closely with the current `ushop` interface style.
-- Added a muted status line and kept the centered dark panel layout to match the `ushop` visual language while preserving `home` content.
+- La sección de anuncios se ha rediseñado como barra fija (`position: fixed`) en la parte superior de la página, eliminando el panel flotante anterior.
+- El toggle de tema se ha integrado dentro de la misma barra, eliminando el `theme-toggle-wrap` independiente.
+- La barra entra con animación `topBarReveal` (slide desde arriba).
+- Delays del hero reescalonados (título: 0.2s, social links: 0.35s, iconos: 350–750ms) para cascada sincronizada con la barra.
+
+# [17-03-2026 - 00:30]
+
+- El aviso de Discord se ha convertido en una sección de anuncios con panel expandible/colapsable.
+- En escritorio (≥768px): panel siempre expandido con fondo secundario diferenciado, sombra y cabecera "Anuncios" con icono de megáfono.
+- En móvil (<768px): panel colapsado por defecto; un botón chevron lo expande/cierra con animación suave mediante `grid-template-rows`.
+- Al redimensionar de móvil a escritorio, el estado colapsado se resetea automáticamente vía `matchMedia`.
+
+# [17-03-2026 - 00:00]
+
+- Añadido un aviso en la esquina superior izquierda con el texto "¿Necesitas un servidor de Discord? — No te preocupes, puedo ayudarte." que enlaza al perfil de Discord del autor.
+- El aviso incluye icono de Discord, animación de entrada y hover con elevación.

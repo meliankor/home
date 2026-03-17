@@ -26,6 +26,34 @@
   </head>
   <body>
     <div class="site-shell">
+      <div class="announcement-bar">
+        <a
+          class="announcement"
+          href="https://discord.com/users/1320818209338822697"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="announcement-meta">
+            <span class="announcement-badge" data-i18n="badge">Anuncios</span>
+            <span class="bi bi-discord announcement-icon" aria-hidden="true"></span>
+          </span>
+          <span class="announcement-text" data-i18n="ann.discord">¿Necesitas un servidor de Discord? No te preocupes, envíame un mensaje para ayudarte.</span>
+          <span class="bi bi-arrow-up-right announcement-arrow" aria-hidden="true"></span>
+        </a>
+        <a
+          class="announcement"
+          href="https://github.com/meliankor/animal-crossing-pc-port"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="announcement-meta">
+            <span class="announcement-badge" data-i18n="badge">Anuncios</span>
+            <span class="bi bi-github announcement-icon" aria-hidden="true"></span>
+          </span>
+          <span class="announcement-text" data-i18n="ann.project">He agregado un nuevo proyecto, échale un vistazo.</span>
+          <span class="bi bi-arrow-up-right announcement-arrow" aria-hidden="true"></span>
+        </a>
+      </div>
       <div class="theme-toggle-wrap">
         <button
           class="theme-toggle hover-lift"
@@ -33,6 +61,12 @@
           aria-label="Toggle theme"
           data-theme-toggle
         ></button>
+        <button
+          class="lang-toggle hover-lift"
+          type="button"
+          aria-label="Cambiar idioma"
+          data-lang-toggle
+        ><span class="bi bi-translate" aria-hidden="true"></span></button>
       </div>
       <main class="main-content">
         <div class="content-root">
@@ -41,7 +75,7 @@
             <div class="social-links animate-slide-up">
               <a
                 class="social-link hover-scale animate-scale-in"
-                style="animation-delay: 0ms"
+                style="animation-delay: 350ms"
                 href="https://github.com/meliankor"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -51,7 +85,7 @@
               </a>
               <a
                 class="social-link hover-scale animate-scale-in"
-                style="animation-delay: 100ms"
+                style="animation-delay: 450ms"
                 href="https://x.com/meliankor"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -61,7 +95,7 @@
               </a>
               <a
                 class="social-link hover-scale animate-scale-in"
-                style="animation-delay: 200ms"
+                style="animation-delay: 550ms"
                 href="https://www.youtube.com/@meliankor"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,7 +105,7 @@
               </a>
               <a
                 class="social-link hover-scale animate-scale-in"
-                style="animation-delay: 300ms"
+                style="animation-delay: 650ms"
                 href="https://discord.com/users/1320818209338822697"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -81,7 +115,7 @@
               </a>
               <a
                 class="social-link hover-scale animate-scale-in"
-                style="animation-delay: 400ms"
+                style="animation-delay: 750ms"
                 href="https://ko-fi.com/meliankor"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -95,7 +129,7 @@
           </section>
           <section class="projects-section">
             <div class="container">
-              <h2 class="projects-title" data-reveal style="--reveal-delay: 0ms">Proyectos</h2>
+              <h2 class="projects-title" data-reveal style="--reveal-delay: 0ms" data-i18n="projects.title">Proyectos</h2>
               <div class="projects-grid" data-reveal style="--reveal-delay: 120ms">
                 <a
                   class="project-card"
@@ -107,8 +141,22 @@
                     <h3 class="project-card-title">Source</h3>
                     <span class="project-card-arrow bi bi-arrow-up-right" aria-hidden="true"></span>
                   </div>
-                  <p class="project-card-subtitle">
+                  <p class="project-card-subtitle" data-i18n="source.desc">
                     Aquí puedes ver el código fuente de esta página web.
+                  </p>
+                </a>
+                <a
+                  class="project-card"
+                  href="https://github.com/meliankor/animal-crossing-pc-port"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="project-card-header">
+                    <h3 class="project-card-title">Animal Crossing — PC Port</h3>
+                    <span class="project-card-arrow bi bi-arrow-up-right" aria-hidden="true"></span>
+                  </div>
+                  <p class="project-card-subtitle" data-i18n="ac.desc">
+                    Un port nativo no oficial de Animal Crossing (GameCube) para PC ya compilado. Requiere una copia propia del juego.
                   </p>
                 </a>
               </div>
