@@ -8,18 +8,14 @@ const translations = {
   es: {
     "badge": "Anuncios",
     "ann.discord": "¿Necesitas un servidor de Discord? No te preocupes, envíame un mensaje para ayudarte.",
-    "ann.project": "He agregado un nuevo proyecto, échale un vistazo.",
     "projects.title": "Proyectos",
     "source.desc": "Aquí puedes ver el código fuente de esta página web.",
-    "ac.desc": "Un port nativo no oficial de Animal Crossing (GameCube) para PC ya compilado. Requiere una copia propia del juego.",
   },
   en: {
     "badge": "Announcements",
     "ann.discord": "Need a Discord server? No worries, send me a message and I'll help you.",
-    "ann.project": "I've added a new project, check it out.",
     "projects.title": "Projects",
     "source.desc": "Here you can see the source code of this website.",
-    "ac.desc": "An unofficial native port of Animal Crossing (GameCube) for PC, pre-compiled. Requires your own copy of the game.",
   },
 };
 
@@ -103,36 +99,6 @@ function positionThemeToggle() {
   new ResizeObserver(update).observe(bar);
 }
 
-function createAnnouncementsCarousel() {
-  const announcements = Array.from(document.querySelectorAll(".announcement"));
-  if (announcements.length <= 1) return;
-
-  const FADE = 350;
-  const INTERVAL = 6000;
-  let current = 0;
-
-  announcements.forEach((a, i) => {
-    a.style.transition = `opacity ${FADE}ms ease`;
-    if (i !== 0) {
-      a.style.opacity = "0";
-      a.style.display = "none";
-    }
-  });
-
-  setInterval(() => {
-    const prev = announcements[current];
-    current = (current + 1) % announcements.length;
-    const next = announcements[current];
-
-    prev.style.opacity = "0";
-    setTimeout(() => {
-      prev.style.display = "none";
-      next.style.display = "inline-flex";
-      void next.offsetWidth;
-      next.style.opacity = "1";
-    }, FADE);
-  }, INTERVAL);
-}
 
 function applyLanguage(lang, toggle) {
   const t = translations[lang];
@@ -165,7 +131,6 @@ function initializeSite() {
   createThemeController();
   createRevealObserver();
   positionThemeToggle();
-  createAnnouncementsCarousel();
   createLanguageController();
 }
 

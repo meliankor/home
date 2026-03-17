@@ -1,3 +1,10 @@
+# [18-03-2026 - 00:00]
+
+- Eliminado el proyecto "Animal Crossing — PC Port" de la sección de proyectos y de la barra de anuncios.
+- La barra de anuncios queda con un único anuncio (Discord), eliminando el carrusel y su animación de fade.
+- Eliminadas las keys de traducción `ann.project` y `ac.desc` del objeto `translations` en ambos idiomas.
+- Eliminada la función `createAnnouncementsCarousel` de `main.js` y su llamada en `initializeSite`.
+
 # [17-03-2026 - 23:30]
 
 - Corregido el centrado de los anuncios: el carrusel ahora usa `style.display = "none"` en lugar del atributo `hidden`, garantizando que solo el anuncio activo ocupa espacio en el layout y `text-align: center` del contenedor funcione correctamente.
